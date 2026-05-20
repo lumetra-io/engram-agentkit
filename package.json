@@ -1,6 +1,6 @@
 {
   "name": "@lumetra/engram-agentkit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Engram memory tools for Inngest AgentKit. Drop into any createAgent() to give your agent durable, explainable memory.",
   "type": "module",
   "main": "dist/index.js",
