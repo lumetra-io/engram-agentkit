@@ -38,12 +38,16 @@ const agent = createAgent({
 });
 
 const { output, toolCalls } = await agent.run(
-  "Remember that my favorite framework is Inngest. Then tell me what you remembered."
+  "Remember that my favorite framework is Inngest. Then tell me what you remembered.",
+  { maxIter: 1 }  // see note below
 );
 
 console.log(output);
 console.log("tool calls:", toolCalls.length);
 ```
+
+> **Heads-up: `maxIter` and the Anthropic adapter (AgentKit 0.13.2).**
+> If `maxIter >= 2`, AgentKit's Anthropic adapter throws `tool_use blocks can only be in assistant messages` mid-loop — the bug is in how it serializes the tool result message back to Claude. This is an **upstream AgentKit bug**, not our package. Until it's fixed, keep `maxIter: 1` for Anthropic + tool flows. OpenAI / Gemini paths aren't affected. We caught this in our e2e smoke against the published artifact.
 
 ## Tools
 
