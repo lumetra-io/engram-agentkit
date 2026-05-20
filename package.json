@@ -1,0 +1,56 @@
+{
+  "name": "@lumetra/engram-agentkit",
+  "version": "0.1.0",
+  "description": "Engram memory tools for Inngest AgentKit. Drop into any createAgent() to give your agent durable, explainable memory.",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "PRIVACY.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "inngest",
+    "agent-kit",
+    "agentkit",
+    "engram",
+    "lumetra",
+    "memory",
+    "ai-agents",
+    "tools",
+    "anthropic",
+    "llm"
+  ],
+  "author": "Lumetra <hello@lumetra.io>",
+  "license": "MIT",
+  "homepage": "https://lumetra.io",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lumetra/engram-agentkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lumetra/engram-agentkit/issues"
+  },
+  "peerDependencies": {
+    "@inngest/agent-kit": ">=0.13",
+    "zod": "^3 || ^4"
+  },
+  "devDependencies": {
+    "@inngest/agent-kit": "^0.13.2",
+    "typescript": "^5.5.0",
+    "zod": "^4.0.0"
+  }
+}
