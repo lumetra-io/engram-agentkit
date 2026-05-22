@@ -93,7 +93,7 @@ export class EngramClient {
    * Query. NOTE: Engram's request body field is `query` (NOT `question`).
    */
   query(bucket: string, query: string): Promise<unknown> {
-    return this.request("POST", `/v1/query`, { query, bucket });
+    return this.request("POST", `/v1/query`, { query, buckets: [bucket] });
   }
 
   listBuckets(limit = 50, offset = 0): Promise<unknown> {
